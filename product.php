@@ -1,22 +1,21 @@
 <?php
 class Product
 {
-    private int $id;
+    private $id;
     private $name;
-    private float $price;
+    private $price;
 
     public function __construct($id, $name, $price)
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->price = $price;
+        $this->id = (int) $id;
+        $this->name = (string) $name;
+        $this->price = (float) $price;
     }
 
     public function getFormattedPrice(): string
     {
         return number_format($this->price, 2);
     }
-
     public function showDetails()
     {
         echo "Product Details:\n";
